@@ -72,6 +72,7 @@ public class CartTest {
 //        UC4 - Add further code to show how each method of Cart can be used. In particular, increase and/or decrease
 //        the quantity of one or more of the products in the cart, and then re-print the updated cart listing.
 
+        cart.setOrders(Collections.singletonList(order));
 
     }
 }
