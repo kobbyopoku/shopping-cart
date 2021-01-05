@@ -132,13 +132,16 @@ public class CartTest {
         rewardProcessor.addProduct(p3);
         rewardProcessor.addProduct(p4);
 
-//        rewardProcessor.
-
 
 //        UC6: Create four different Order object instances and ensure each has a different price policy –
 //        default, buy 1 get 1 free, buy 2 get 1 free, and buy 5 get 1 free.
 //        Calculate the cost of each to show the price policies are being applied correctly, and test each
 //        policy with different quantities.
+
+        Order o1 = new Order(3, p1.getUnitPrice() * 3, p1);
+        Order o2 = new Order(5, p2.getUnitPrice() * 5, p2);
+        Order o3 = new Order(4, p3.getUnitPrice() * 4, p3);
+        Order o4 = new Order(7, p4.getUnitPrice() * 7, p4);
 
 
     }
