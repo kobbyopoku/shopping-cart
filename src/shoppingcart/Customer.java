@@ -1,9 +1,10 @@
 package shoppingcart;
 
-public class Customer {
+public class Customer{
 
     private String customerId;
     private Name name;
+    private int rewardPoints;
 
     public Customer() {
     }
@@ -29,6 +30,15 @@ public class Customer {
         this.name = name;
     }
 
+
+    public int getRewardPoints() {
+        return rewardPoints;
+    }
+
+    public void addRewardPoints(int rewardPoints) {
+        this.rewardPoints = rewardPoints;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -36,4 +46,5 @@ public class Customer {
                 ", name=" + name +
                 '}';
     }
+
 }

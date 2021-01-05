@@ -2,7 +2,7 @@ package shoppingcart;
 
 import java.util.Objects;
 
-public class Product implements Comparable<Product> {
+public class Product extends RewardProcessor implements Comparable<Product> {
 
     private String productCode;
     private String description;

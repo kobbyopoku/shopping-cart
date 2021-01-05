@@ -13,6 +13,8 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
 
     private List<Order> orders;
 
+    private int noOfItems;
+
     public Cart() {
     }
 
@@ -55,7 +57,7 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
         this.orders = orders;
     }
 
-    public int getTotalCost(){
+    public int getTotalCost() {
         return orders.stream().mapToInt(Order::getCost).sum();
     }
 
@@ -84,6 +86,10 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
         orders.stream().sorted(co);
     }
 
+    public int getNoOfItems() {
+        return orders.size();
+    }
+
     @Override
     public int compare(Cart cart, Cart t1) {
         return 0;
@@ -101,6 +107,8 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
                 ", customer=" + customer +
                 ", date=" + date +
                 ", orders=" + orders +
+                ", no of items=" + getNoOfItems() +
+                ", total cost="+ getTotalCost() +
                 '}';
     }
 }
