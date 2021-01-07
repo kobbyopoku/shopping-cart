@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class RewardProcessor {
 
-    private HashSet<Product> products;
+    private HashSet<Product> products = new HashSet<>();
 
     public boolean addProduct(Product p){
         return products.add(p);

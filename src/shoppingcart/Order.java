@@ -1,6 +1,6 @@
 package shoppingcart;
 
-public class Order implements Comparable<Order> {
+public class Order implements Comparable<Order>,PricePolicy {
 
     private int quantity;
     private int cost;
@@ -24,7 +24,7 @@ public class Order implements Comparable<Order> {
     }
 
     public int getCost() {
-        return cost;
+        return product.getUnitPrice() * quantity;
     }
 
     public void setCost(int cost) {
@@ -37,6 +37,10 @@ public class Order implements Comparable<Order> {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public void setPricePolicy(PricePolicy pricePolicy){
+
     }
 
     @Override
@@ -56,5 +60,12 @@ public class Order implements Comparable<Order> {
                 ", cost=" + cost +
                 ", product=" + product +
                 '}';
+    }
+
+    @Override
+    public int calculateCost(int quantity, int unitPrice) {
+        quantity = this.quantity;
+        unitPrice = this.product.getUnitPrice();
+        return quantity * unitPrice;
     }
 }
