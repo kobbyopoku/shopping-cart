@@ -44,7 +44,7 @@ public class Customer{
         return "Customer{" +
                 "customerId='" + customerId + '\'' +
                 ", name=" + name +
+                ", rewardPoints=" + rewardPoints +
                 '}';
     }
-
 }

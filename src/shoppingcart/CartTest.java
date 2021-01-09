@@ -51,16 +51,16 @@ public class CartTest {
         Name name = new Name();
         Customer customer = new Customer();
         Scanner scanner1 = new Scanner(System.in);
-        System.out.println("Enter the customer's first name: ");
-        name.setFirstName(scanner1.nextLine());
+//        System.out.println("Enter the customer's first name: ");
+        name.setFirstName("Kobby");
 
-        System.out.println("Enter the customer's family name: ");
-        name.setFamilyName(scanner1.nextLine());
+//        System.out.println("Enter the customer's family name: ");
+        name.setFamilyName("Opoku");
 
         System.out.println(name.toString());
 
         System.out.println("Enter the customer's ID: ");
-        customer.setCustomerId(scanner1.nextLine());
+        customer.setCustomerId("P0123");
         customer.setName(name);
 
         System.out.println(customer.toString());
@@ -127,10 +127,16 @@ public class CartTest {
         Product p4 = new Product("P014", "MACBOOK", 200);
 
         RewardProcessor rewardProcessor = new RewardProcessor();
-        rewardProcessor.addProduct(p1);
-        rewardProcessor.addProduct(p2);
+        rewardProcessor.addProduct(guava);
+        rewardProcessor.addProduct(apple);
         rewardProcessor.addProduct(p3);
-        rewardProcessor.addProduct(p4);
+        rewardProcessor.addProduct(peach);
+
+        int rewardPoints = rewardProcessor.rewardPoint(cart);
+        System.out.println("Reward points: "+rewardPoints);
+        customer.addRewardPoints(rewardPoints);
+
+        System.out.println(cart.toString());
 
 
 //        UC6: Create four different Order object instances and ensure each has a different price policy –
