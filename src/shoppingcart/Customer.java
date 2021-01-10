@@ -1,5 +1,11 @@
 package shoppingcart;
 
+/**
+ * This class represents the Customer object
+ * An Order consist of a Customer
+ *
+ * @author SETRIAKOR
+ */
 public class Customer{
 
     private String customerId;
@@ -22,23 +28,41 @@ public class Customer{
         this.customerId = customerId;
     }
 
+    /**
+     * @return the name
+     */
     public Name getName() {
         return name;
     }
 
+    /**
+     * @param name the name to set
+     */
     public void setName(Name name) {
         this.name = name;
     }
 
-
+    /**
+     * @return rewardPoints the pricePolicy to set
+     */
     public int getRewardPoints() {
         return rewardPoints;
     }
 
+
+    /**
+     * @param rewardPoints the rewardPoints to set
+     */
     public void addRewardPoints(int rewardPoints) {
         this.rewardPoints = rewardPoints;
     }
 
+
+    /**
+     * Returns a textual representation of the customer.
+     *
+     * @return a textual representation of the customer.
+     */
     @Override
     public String toString() {
         return "Customer{" +
