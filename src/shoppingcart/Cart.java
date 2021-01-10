@@ -25,38 +25,65 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
         this.orders = orders;
     }
 
+    /**
+     * @return the cartId
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * @@param cartId the cartId to set
+     */
     public void setCartId(String cartId) {
         this.cartId = cartId;
     }
 
+    /**
+     * @return the customer
+     */
     public Customer getCustomer() {
         return customer;
     }
 
+    /**
+     * @@param customer the customer to set
+     */
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
+    /**
+     * @return the date
+     */
     public Date getDate() {
         return date;
     }
 
+    /**
+     * @param date the date to set
+     */
     public void setDate(Date date) {
         this.date = date;
     }
 
+    /**
+     * @return the orders
+     */
     public List<Order> getOrders() {
         return orders;
     }
 
+    /**
+     * @param orders the orders to set
+     */
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
 
+    /**
+     * @return the totalCost
+     */
     public int getTotalCost() {
         return orders.stream().mapToInt(Order::getCost).sum();
     }
@@ -73,7 +100,6 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
         return orders.contains(order);
     }
 
-    // To recheck
     public Optional<Order> findOrder(String order) {
         return orders.stream().findAny();
     }

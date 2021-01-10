@@ -1,10 +1,19 @@
 package shoppingcart;
 
+
 import java.util.HashSet;
 
+/**
+ * This class represents the RewardProcessor object
+ * An Order consist of a products
+ *
+ * @author SETRIAKOR
+ */
 public class RewardProcessor {
 
+
     private HashSet<Product> products = new HashSet<Product>();
+
 
     public HashSet<Product> getProducts() {
         return products;
