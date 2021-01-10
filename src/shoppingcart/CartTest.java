@@ -149,6 +149,7 @@ public class CartTest {
         Order o3 = new Order(4, p3.getUnitPrice() * 4, p3);
         Order o4 = new Order(7, p4.getUnitPrice() * 7, p4);
 
+//        o1.setPolicy();
 
     }
 }
