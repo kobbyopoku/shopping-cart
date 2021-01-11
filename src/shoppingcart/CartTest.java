@@ -17,23 +17,23 @@ public class CartTest {
 //        Note: You can either use a data file to dynamically read orders, or hardcode the order instances to add to the
 //        cart.
 
-//        Product product = new Product();
-//        System.out.println("ADDING A NEW PRODUCT");
-//        Scanner scanner = new Scanner(System.in);
-//
-//        System.out.println("Enter the product code: ");
-//        product.setProductCode(scanner.nextLine());
-//
-//        System.out.println("Enter the product description: ");
-//        product.setDescription(scanner.nextLine());
-//
-//        System.out.println("Enter the product price: ");
-//        product.setUnitPrice(scanner.nextInt());
-//
-//        System.out.println(product.toString());
-//
-//        Order order = new Order(2, product.getUnitPrice() * 2, product); //Creating a test order
-//        System.out.println(order.toString());
+        Product product = new Product();
+        System.out.println("ADDING A NEW PRODUCT");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the product code: ");
+        product.setProductCode(scanner.nextLine());
+
+        System.out.println("Enter the product description: ");
+        product.setDescription(scanner.nextLine());
+
+        System.out.println("Enter the product price: ");
+        product.setUnitPrice(scanner.nextInt());
+
+        System.out.println(product.toString());
+
+        Order order = new Order(2, product.getUnitPrice() * 2, product); //Creating a test order
+        System.out.println(order.toString());
 
         Product guava = new Product("P002", "guava", 90);
         Product peach = new Product("P002", "Peach", 100);
@@ -82,6 +82,20 @@ public class CartTest {
 //        UC2 - Test each of the sort methods work as expected, as evidenced by appropriate output.
 //        • For the sortOrders(Comparator<Order>) method, you should pass in a custom comparator that sorts by cost
 //        (asc) and if these are the same then by product (desc).
+        orders.sort((orderTest, t1) -> {
+            return orders.size();
+        });
+
+        cart.sortOrders();
+        cart.sortOrders((orderTest, t1) -> {
+            if(order.getCost() == t1.getCost()){
+                orders.stream().sorted();
+            }else{
+                orders.stream().sorted();
+            }
+            return orders.size();
+        });
+        cart.setOrders(orders);
 
 
 
@@ -149,7 +163,6 @@ public class CartTest {
         Order o3 = new Order(4, p3.getUnitPrice() * 4, p3);
         Order o4 = new Order(7, p4.getUnitPrice() * 7, p4);
 
-//        o1.setPolicy();
 
     }
 }
