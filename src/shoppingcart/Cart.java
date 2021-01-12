@@ -5,6 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class represents the Cart object
+ * An Cart consist of an id, customer, date and a list of orders
+ *
+ * @author SETRIAKOR
+ */
 public class Cart implements Iterable<Order>, Comparator<Cart> {
 
     private String cartId;
@@ -12,8 +18,6 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
     private Date date;
 
     private List<Order> orders;
-
-    private int noOfItems;
 
     public Cart() {
     }
@@ -134,7 +138,7 @@ public class Cart implements Iterable<Order>, Comparator<Cart> {
                 ", date=" + date +
                 ", orders=" + orders +
                 ", no of items=" + getNoOfItems() +
-                ", total cost="+ getTotalCost() +
+                ", total cost=" + getTotalCost() +
                 '}';
     }
 }

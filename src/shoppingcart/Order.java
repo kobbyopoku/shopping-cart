@@ -7,7 +7,7 @@ package shoppingcart;
  * @author SETRIAKOR
  */
 
-public class Order implements Comparable<Order>,PricePolicy {
+public class Order implements Comparable<Order>, PricePolicy {
 
     private int quantity;
     private int cost;

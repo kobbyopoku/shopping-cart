@@ -14,7 +14,6 @@ public class RewardProcessor {
 
     private HashSet<Product> products = new HashSet<Product>();
 
-
     public HashSet<Product> getProducts() {
         return products;
     }
@@ -23,17 +22,19 @@ public class RewardProcessor {
         this.products = products;
     }
 
-    public boolean addProduct(Product p){
+    public boolean addProduct(Product p) {
         return products.add(p);
-    };
+    }
 
-    public int rewardPoint(Cart c){
+    ;
+
+    public int rewardPoint(Cart cart) {
         final int[] rp = {0};
-        products.forEach(e -> {
-            c.getOrders().forEach(o -> {
-                Product p = o.getProduct();
-                if (o.getProduct().equals(e)){
-                    rp[0] = rp[0] + o.getQuantity();
+            cart.getOrders().forEach(cartProducts -> {
+                products.forEach(rewardProcessorProduct -> {
+                Product productInCart = cartProducts.getProduct();
+                if (productInCart.equals(rewardProcessorProduct)) {
+                    rp[0] = rp[0] + cartProducts.getQuantity();
                 }
             });
         });

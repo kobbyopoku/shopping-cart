@@ -2,11 +2,11 @@ package shoppingcart;
 
 /**
  * This class represents the Customer object
- * An Order consist of a Customer
+ * An Customer consist of a name and and id
  *
  * @author SETRIAKOR
  */
-public class Customer{
+public class Customer {
 
     private String customerId;
     private Name name;
