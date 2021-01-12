@@ -2,13 +2,14 @@ package shoppingcart;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CartTest {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
 
 
 //        UC1 - A test program that creates an instance of Cart, populates it with several orders (for both products and
@@ -128,6 +129,9 @@ public class CartTest {
 
 
         File file = new File("Cart.txt");
+        if(!file.exists())
+            file.createNewFile();
+
         PrintWriter printWriter = new PrintWriter(file);
 
         printWriter.write("UC3 Solution.\n");
